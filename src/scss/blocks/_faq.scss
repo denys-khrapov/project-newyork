@@ -1,0 +1,245 @@
+@use "./layout/variables" as *;
+@use "./layout/colors" as *;
+
+#showMoreBtn {
+  margin-top: 44px;
+  padding: 19px 24px;
+
+  .btn-text {
+    color: var(--NY-Black-source);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  &:hover {
+    span {
+      color: #FFFFFF;
+    }
+  }
+}
+
+#showMoreBtn.active {
+  ._icon-add-line {
+    transform: rotate(45deg);
+  }
+}
+
+.faq {
+  display: flex;
+  min-width: 320px;
+  max-width: 1279px;
+  padding: 48px 0;
+  flex-direction: column;
+  align-items: center;
+  background: var(--White-100);
+
+  @media (min-width: $pc) {
+    padding: 96px 0;
+    align-items: flex-start;
+    max-width: 100%;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    color: var(--NY-Black-source);
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1;
+    align-self: flex-start;
+
+    &:not(:last-child) {
+      margin-bottom: 48px;
+    }
+
+    @media (min-width: $pc) {
+      font-size: 64px;
+      letter-spacing: -4px;
+    }
+  }
+
+  &__item {
+    border-bottom: 1px solid var(--NY-Black-200);
+    width: 100%;
+  }
+
+  &__item.active {
+    border-bottom: 1px solid var(--NY-Black-source);
+  }
+
+  &__header {
+    color: var(--NY-Black-source);
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    cursor: pointer;
+    transition: all 0.4s;
+    padding: 16px 0;
+
+    ._icon-add-line {
+      &:after {
+        transition: all 0.4s;
+      }
+    }
+
+    &:hover {
+      color: #BC7155;
+      transition: all 0.4s;
+
+      ._icon-add-line {
+        &:after {
+          color: #BC7155;
+          transition: all 0.4s;
+        }
+      }
+
+      &__header-title {
+        transition: all 0.4s;
+      }
+    }
+
+    ._icon-add-line {
+      margin-left: 10px;
+      transition: all 0.4s;
+
+      &:after {
+        font-size: 32px;
+        transition: all 0.4s;
+
+        @media (min-width: $pc) {
+          font-size: 48px;
+        }
+      }
+    }
+
+    @media (min-width: $pc) {
+      font-size: 26px;
+      line-height: 1.2;
+      letter-spacing: -1px;
+      padding: 23px 0;
+    }
+  }
+
+  &__header.active {
+    color: #BC7155;
+    transition: all 0.4s;
+
+    ._icon-add-line {
+      color: #BC7155;
+      transform: rotate(45deg);
+      transition: all 0.4s;
+    }
+  }
+
+  &__header-title {
+    transition: all 0.4s;
+
+    @media (min-width: $pc) {
+      width: 46%;
+    }
+  }
+
+  &__content-text {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    color: rgba(0, 13, 16, 0.80);
+    font-size: 26px;
+    line-height: 1.2;
+    letter-spacing: -1px;
+  }
+
+  &__box {
+    width: 100%;
+    display: none;
+  }
+
+  &__content {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    display: none;
+
+    @media (min-width: $pc) {
+      display: none;
+      max-width: 776px;
+      margin-left: auto;
+      padding-top: 0px;
+      padding-bottom: 24px;
+    }
+  }
+
+  &__content-text {
+    color: rgba(0, 13, 16, 0.80);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+
+    @media (min-width: $pc) {
+      font-size: 26px;
+      line-height: 1.2;
+      letter-spacing: -1px;
+      padding-bottom: 0px;
+      padding-top: 0;
+    }
+  }
+
+  &__content-link {
+    font-family: $fontFamily;
+    color: var(--NY-Terra-source);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: flex-end;
+    margin-top: 12px;
+    position: relative;
+    width: max-content;
+    margin-left: auto;
+
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background-color: var(--NY-Terra-source);
+      transition: all 0.4s;
+    }
+
+    &:hover {
+      &:before {
+        width: 100%;
+      }
+    }
+
+    &:active {
+      color: var(--NY-Black-source);
+
+      &:before {
+        width: 100%;
+        background-color: var(--NY-Black-source);
+      }
+    }
+
+    @media (min-width: $pc) {
+      font-size: 26px;
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -1px;
+      margin-top: 24px;
+      gap: 16px;
+    }
+  }
+}

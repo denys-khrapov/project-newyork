@@ -1,0 +1,72 @@
+@use "./variables" as *;
+@use "./colors" as *;
+
+.slider-nav {
+
+	.swiper-button-next,
+	.swiper-button-prev {
+
+		&::after,
+		&::before {
+			font-family: "icons";
+			color: var(--NY-Black-source);
+			font-size: 32px;
+			transition: all 0.4s;
+		}
+
+		@media (min-width: $pc) {
+
+			&::after,
+			&::before {
+				font-size: 64px;
+			}
+		}
+
+		&:hover {
+
+			&::after,
+			&::before {
+				color: var(--NY-Terra-source);
+			}
+		}
+
+		&:active {
+
+			&::after,
+			&::before {
+				color: var(--NY-Terra-300);
+			}
+		}
+
+		&.swiper-button-disabled {
+			opacity: 1;
+
+			&::after,
+			&::before {
+				color: var(--NY-Black-100);
+			}
+		}
+	}
+
+	.swiper-button-prev {
+		&::after {
+			display: none;
+		}
+	}
+
+	.swiper-pagination {
+		width: fit-content;
+		color: var(--NY-Black-source);
+		font-family: $fontFamily;
+		font-size: 28px;
+		font-weight: 600;
+		line-height: 1.2;
+		letter-spacing: -1px;
+
+		@media (min-width: $pc) {
+			font-size: 64px;
+			line-height: 1;
+			letter-spacing: -4px;
+		}
+	}
+}

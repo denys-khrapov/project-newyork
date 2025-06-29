@@ -1,0 +1,390 @@
+@use "./variables" as *;
+@use "./colors" as *;
+
+.title {
+  color: var(--NY-Black-source);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -4px;
+
+  span {
+    color: var(--NY-Terra-source);
+  }
+
+  &--big {
+    font-size: 64px;
+
+    @media (min-width: $pc) {
+      font-size: 200px;
+    }
+  }
+
+  &--medium {
+    font-size: 64px;
+
+    @media (min-width: $pc) {
+      font-size: 128px;
+    }
+  }
+
+  &--small {
+    font-size: 64px;
+  }
+
+  &--less {
+    font-size: 26px;
+    line-height: 1.2;
+    letter-spacing: -1px;
+
+    @media (min-width: $pc) {
+      font-size: 64px;
+      line-height: 1;
+      letter-spacing: -4px;
+    }
+  }
+}
+
+.social {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+
+  @media (min-width: $pc) {
+    row-gap: 32px;
+  }
+
+  &__phone {
+    color: var(--NY-Terra-source);
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -1px;
+    position: relative;
+    transition: all 0.4s;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--NY-Terra-source);
+      transition: all 0.4s;
+    }
+
+    &:hover {
+      &::after {
+        width: 100%;
+      }
+    }
+
+    &:active {
+      color: var(--NY-Black-source);
+
+      &::after {
+        background: var(--NY-Black-source);
+      }
+    }
+
+    &.blocked {
+      color: var(--NY-Black-100);
+      pointer-events: none;
+
+      &::after {
+        background: var(--NY-Black-100);
+      }
+    }
+
+    @media (min-width: $pc) {
+      font-size: 64px;
+      line-height: 1;
+      letter-spacing: -4px;
+      padding-bottom: 8px;
+    }
+  }
+
+  &__title {
+    color: var(--NY-Black-source);
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -1px;
+
+    @media (min-width: $pc) {
+      font-size: 64px;
+      line-height: 1;
+      letter-spacing: -4px;
+    }
+  }
+
+  &__item {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 56px;
+    padding-bottom: 8px;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--NY-Terra-source);
+      transition: all 0.4s;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &:hover {
+      &::after {
+        width: 100%;
+      }
+    }
+
+    &:active {
+      &::after {
+        background: var(--NY-Black-source);
+      }
+    }
+
+    &.blocked {
+      pointer-events: none;
+
+      &::after {
+        background: var(--NY-Black-100);
+      }
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+
+    @media (min-width: $pc) {
+      align-items: center;
+      flex-direction: row;
+      gap: 24px;
+    }
+  }
+
+  &__messengers {
+    display: flex;
+    column-gap: 12px;
+  }
+}
+
+.form {
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    row-gap: 39px;
+  }
+
+  &__radio-holder {
+    display: flex;
+  }
+
+  &__input-holder {
+    position: relative;
+    padding-right: 40px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: var(--NY-Black-200);
+      transition: all 0.4s;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 32px;
+      height: 32px;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    &:hover {
+      &::before {
+        background-color: var(--NY-Black-source);
+      }
+    }
+
+    &--name {
+      &::after {
+        background-image: url("../img/icon-user.svg");
+      }
+
+      &.blocked {
+        &::after {
+          background-image: url("../img/icon-user-blocked.svg");
+        }
+      }
+    }
+
+    &--phone {
+      &::after {
+        background-image: url("../img/icon-phone.svg");
+      }
+
+      &.blocked {
+        &::after {
+          background-image: url("../img/icon-phone-blocked.svg");
+        }
+      }
+    }
+
+    &.blocked {
+      label {
+        color: var(--NY-Black-200);
+        pointer-events: none;
+      }
+
+      &:hover {
+        &::before {
+          background-color: var(--NY-Black-200);
+        }
+      }
+    }
+  }
+
+  &__input {
+    font-size: $fontSize;
+    width: 100%;
+    color: var(--NY-Black-200);
+    letter-spacing: -0.4px;
+
+    @media (min-width: $pc) {
+      font-size: 26px;
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -1px;
+    }
+
+    &::placeholder {
+      color: var(--NY-Black-200);
+      letter-spacing: -0.4px;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  label {
+    color: var(--NY-Black-source);
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -1px;
+  }
+
+  .btn {
+    margin-top: 8px;
+    align-self: flex-end;
+
+    &::after {
+      font-size: 18px;
+    }
+
+    @media (min-width: $pc) {
+      margin-top: 24px;
+
+      &::after {
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+.link {
+  transition: all 0.4s;
+
+  &::after,
+  &::before {
+    transition: all 0.4s;
+  }
+
+  &:hover {
+    color: var(--NY-Terra-source);
+
+    &::after,
+    &::before {
+      color: var(--NY-Terra-source);
+    }
+  }
+
+  &:active {
+    color: var(--NY-Terra-300);
+
+    &::after,
+    &::before {
+      color: var(--NY-Terra-300);
+    }
+  }
+
+  &.blocked {
+    pointer-events: none;
+    color: var(--NY-Black-100);
+
+    &::after,
+    &::before {
+      color: var(--NY-Black-100);
+    }
+  }
+}
+
+.badge {
+  position: relative;
+  z-index: 5;
+
+  &__link {
+    font-size: 16px;
+    line-height: 1.4;
+    padding: 7px 11px;
+    border-radius: 999px;
+    border: 1px solid var(--NY-Black-source);
+    transition: all 0.4s;
+
+    &:hover {
+      color: var(--NY-Blue-200);
+      border-color: var(--NY-Blue-200);
+    }
+
+    &:active {
+      color: var(--NY-Blue-500);
+      border-color: var(--NY-Blue-500);
+    }
+
+    @media (min-width: $pc) {
+      font-size: $fontSize;
+      line-height: 1.3;
+      letter-spacing: -0.4px;
+      padding: 7px 15px;
+    }
+
+    &--disabled {
+      cursor: default;
+      color: var(--NY-Blue-200);
+      border: 1px solid var(--NY-Blue-200);
+    }
+  }
+}

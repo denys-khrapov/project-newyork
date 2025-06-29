@@ -1,0 +1,354 @@
+@use "./layout/variables" as *;
+@use "./layout/colors" as *;
+
+.experts {
+  display: flex;
+  min-width: 320px;
+  max-width: 1279px;
+  padding: 96px 0 32px 0;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: $pc) {
+    padding: 103px 0 96px 0;
+    max-width: 100%;
+  }
+
+  &--contact,
+  &--company {
+    .experts__title {
+      font-size: 28px;
+      line-height: 1.2;
+      letter-spacing: -1px;
+
+      @media (min-width: $pc) {
+        max-width: 628px;
+        word-break: normal;
+        font-size: 64px;
+        line-height: 1;
+        letter-spacing: -4px;
+      }
+    }
+  }
+
+  &--service {
+    .experts__title {
+      word-break: normal;
+    }
+
+    padding: 64px 0 32px;
+
+    @media (min-width: $pc) {
+      padding: 160px 0 96px;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 64px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    color: var(--NY-Black-source);
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -4px;
+    word-break: break-all;
+    width: 100%;
+
+    @media (min-width: $pc) {
+      width: 100%;
+    }
+
+    &--small {
+      font-size: 26px;
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -1px;
+
+      @media (min-width: $pc) {
+        font-size: 64px;
+        line-height: 1;
+        letter-spacing: -4px;
+      }
+    }
+  }
+
+  &__box {
+    display: flex;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 48px;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  &__box-card {
+    display: flex;
+    min-width: 256px;
+    padding-bottom: 21px;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1 0 0;
+    border-bottom: 1px solid var(--NY-Black-200);
+    gap: 32px;
+  }
+
+  &__box-card-img {
+    height: 280px;
+    width: 100%;
+
+    &--mob {
+      display: block;
+    }
+
+    &--des {
+      display: none;
+    }
+
+    @media (min-width: $pc) {
+      justify-content: center;
+      height: 376px;
+      align-items: center;
+      background: var(--NY-Black-50);
+
+      &--des {
+        display: block;
+      }
+
+      &--mob {
+        display: none;
+      }
+    }
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__box-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 24px;
+
+    @media (min-width: $pc) {
+      gap: 27px;
+      width: 100%;
+    }
+  }
+
+  &__box-card-content-text {
+    display: flex;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 18px;
+    flex-wrap: wrap;
+
+    @media (min-width: $pc) {
+      width: 100%;
+      align-items: center;
+      gap: 24px;
+    }
+  }
+
+  &__box-card-content-text-tittle {
+    display: flex;
+    min-width: 256px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    flex: 1 0 0;
+
+    @media (min-width: $pc) {
+      gap: 9px;
+    }
+  }
+
+  &__fullName {
+    color: var(--NY-Black-source);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+
+    @media (min-width: $pc) {
+      font-size: 26px;
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -1px;
+    }
+  }
+
+  &__jobTitle {
+    color: var(--NY-Black-900);
+    font-size: 16px;
+    line-height: 1.4;
+
+    @media (min-width: $pc) {
+      font-size: $fontSize;
+      font-weight: 300;
+      line-height: 1.4;
+      letter-spacing: -1px;
+    }
+  }
+
+  &__text-holder {
+    color: var(--NY-Black-900);
+    font-size: 16px;
+    line-height: 1.4;
+
+    span {
+      &:before {
+        font-size: 24px;
+      }
+    }
+
+    @media (min-width: $pc) {
+      font-size: $fontSize;
+      letter-spacing: -0.4px;
+    }
+
+    p {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      &:not(:last-child) {
+        margin-bottom: 8px;
+      }
+    }
+  }
+
+  &__box-card-content-text-contact {
+    display: flex;
+    min-width: 256px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    flex: 1 0 0;
+
+    @media (min-width: $pc) {
+      max-width: 325px;
+      align-items: flex-start;
+    }
+  }
+
+  &__address {
+    font-style: normal;
+  }
+
+  &__box-link {
+    color: var(--NY-Terra-source);
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -1px;
+    word-break: break-all;
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background-color: var(--NY-Terra-source);
+      transition: all 0.4s;
+    }
+
+    &:hover {
+      &:before {
+        width: 100%;
+      }
+    }
+
+    &:active {
+      color: var(--NY-Black-source);
+
+      &:before {
+        width: 100%;
+        background-color: var(--NY-Black-source);
+      }
+    }
+  }
+
+  &__social-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__social-nav-item {
+    width: 32px;
+    height: 32px;
+    position: relative;
+    transition: all 0.4s;
+
+    &--telegram {
+      background: #28A8E9;
+    }
+
+    &--viber {
+      background: #675DA9;
+    }
+
+    &--whatsapp {
+      background: #0DC143;
+    }
+
+    a {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background-color: var(--NY-Terra-source);
+      transition: all 0.4s;
+    }
+
+    &:hover {
+      &:before {
+        width: 100%;
+      }
+    }
+
+    &:active {
+      color: var(--NY-Black-source);
+
+      &:before {
+        width: 100%;
+        background-color: var(--NY-Black-source);
+      }
+    }
+  }
+
+  &__box-card-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    @media (min-width: $pc) {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+  }
+}

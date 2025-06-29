@@ -1,0 +1,481 @@
+@use "./layout/variables" as *;
+@use "./layout/colors" as *;
+
+.hero {
+  padding-top: 96px;
+  position: relative;
+  min-height: 695px;
+
+  @media (min-width: $pc) {
+    min-height: 680px;
+    height: 100vh;
+    max-height: 806px;
+    padding-top: 128px;
+  }
+
+  &__icon-holder {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 48px;
+
+    @media (min-width: $pc) {
+      font-size: 64px;
+    }
+  }
+
+  &__date {
+    text-align: left;
+    color: var(--NY-Blue-600);
+    letter-spacing: -0.4px;
+  }
+
+  &__text-holder {
+    letter-spacing: -0.4px;
+
+    p {
+      &:not(:last-child) {
+        margin-bottom: 26px;
+      }
+
+      @media (min-width: $pc) {
+        &:not(:last-child) {
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+
+  &__container {
+    padding: 0 16px;
+
+    @media (min-width: $pc) {
+      padding: 0 72px;
+    }
+  }
+
+  &__content {
+    text-align: center;
+
+    @media (min-width: $pc) {
+      text-align: left;
+    }
+  }
+
+  &__subtitle {
+    color: var(--NY-Black-source);
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -2px;
+
+    @media (min-width: $pc) {
+      text-align: right;
+      font-size: 42px;
+    }
+  }
+
+  &__title {
+    color: var(--NY-Black-source);
+    font-size: 128px;
+    font-weight: 700;
+    line-height: 0.9;
+    letter-spacing: -8px;
+
+    @media (min-width: $pc) {
+      font-size: 260px;
+      letter-spacing: -12px;
+      margin-top: -12px;
+    }
+  }
+
+  &__bg-holder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    &--mob {
+      @media (min-width: $pc) {
+        display: none;
+      }
+    }
+
+    &--desk {
+      display: none;
+
+      @media (min-width: $pc) {
+        display: block;
+      }
+    }
+  }
+
+  &__bg-404-holder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(360deg, #000D10 0%, rgba(0, 13, 16, 0.53) 100%);
+      border-radius: 0 0 48px 0;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0 0 48px 0;
+    }
+
+    @media (min-width: $pc) {
+      &::before {
+        border-radius: 0 0 128px 0;
+      }
+
+      img {
+        border-radius: 0 0 128px 0;
+      }
+    }
+
+    &--mob {
+      @media (min-width: $pc) {
+        display: none;
+      }
+    }
+
+    &--desk {
+      display: none;
+
+      @media (min-width: $pc) {
+        display: block;
+      }
+    }
+  }
+
+  &__bg-article-holder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(360deg, #000D10 0%, rgba(0, 13, 16, 0.53) 100%);
+      border-radius: 0 0 48px 0;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 0 0 48px 0;
+    }
+
+    @media (min-width: $pc) {
+      &::before {
+        border-radius: 0 0 128px 0;
+      }
+
+      img {
+        border-radius: 0 0 128px 0;
+      }
+    }
+
+    &--desk {
+      display: none;
+
+      @media (min-width: $pc) {
+        display: block;
+      }
+    }
+
+    &--mob {
+      @media (min-width: $pc) {
+        display: none;
+      }
+    }
+  }
+
+  &__bg-catalog-article-holder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(0deg, #000D10 12.39%, rgba(0, 13, 16, 0.25) 100%);
+      border-radius: 0 0 48px 0;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 0 0 48px 0;
+    }
+
+    @media (min-width: $pc) {
+      &::before {
+        border-radius: 0 0 128px 0;
+      }
+
+      img {
+        border-radius: 0 0 128px 0;
+      }
+    }
+
+    &--desk {
+      display: none;
+
+      @media (min-width: $pc) {
+        display: block;
+      }
+    }
+
+    &--mob {
+      @media (min-width: $pc) {
+        display: none;
+      }
+    }
+  }
+
+  &__bg-company-holder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0 0 48px 0;
+    }
+
+    @media (min-width: $pc) {
+      img {
+        border-radius: 0 0 128px 0;
+      }
+    }
+  }
+
+  &__bg-contact-holder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0 0 48px 0;
+    }
+
+    @media (min-width: $pc) {
+      img {
+        border-radius: 0 0 128px 0;
+      }
+    }
+  }
+
+  &__bg-faq-holder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(360deg, #000D10 16.33%, rgba(0, 13, 16, 0.25) 119.46%);
+      border-radius: 0 0 48px 0;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0 0 48px 0;
+    }
+
+    @media (min-width: $pc) {
+      &::before {
+        border-radius: 0 0 128px 0;
+      }
+
+      img {
+        border-radius: 0 0 128px 0;
+      }
+    }
+
+    &--desk {
+      display: none;
+
+      @media (min-width: $pc) {
+        display: block;
+      }
+    }
+
+    &--mob {
+      @media (min-width: $pc) {
+        display: none;
+      }
+    }
+  }
+
+  &__bg-services-holder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(360deg, #000D10 16.33%, rgba(0, 13, 16, 0.25) 119.46%);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &--desk {
+      display: none;
+
+      @media (min-width: $pc) {
+        display: block;
+      }
+    }
+
+    &--mob {
+      @media (min-width: $pc) {
+        display: none;
+      }
+    }
+  }
+
+  &__bg-service-holder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(360deg, #FFFFFF 35.24%, rgba(255, 255, 255, 0.00) 64.76%);
+    }
+
+    @media (min-width: $pc) {
+      &::before {
+        background: linear-gradient(270deg, #FFFFFF 50%, rgba(255, 255, 255, 0.00) 100%);
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &--desk {
+      display: none;
+
+      @media (min-width: $pc) {
+        display: block;
+      }
+    }
+
+    &--mob {
+      @media (min-width: $pc) {
+        display: none;
+      }
+    }
+  }
+}
+
+.hero-bg {
+
+  &__top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    object-fit: cover;
+    object-position: 46% 0;
+
+    @media (min-width: $pc) {
+      object-position: 0 0;
+    }
+  }
+
+  &__bottom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+    object-fit: cover;
+    object-position: 46% 0;
+
+    @media (min-width: $pc) {
+      object-position: 0 0;
+    }
+  }
+}

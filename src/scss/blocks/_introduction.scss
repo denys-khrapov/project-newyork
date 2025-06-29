@@ -1,0 +1,89 @@
+@use "./layout/variables" as *;
+@use "./layout/colors" as *;
+
+.introduction {
+  padding: 48px 0;
+
+  @media (min-width: $pc) {
+    padding: 96px 0 128px;
+  }
+
+  &__container {
+    display: flex;
+
+    @media (min-width: $pc) {
+      justify-content: flex-end;
+    }
+  }
+
+  &__content {
+    padding-left: 40px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+
+    .btn {
+      margin-left: auto;
+    }
+
+    @media (min-width: $pc) {
+      padding-left: 80px;
+      max-width: 976px;
+      width: 100%;
+      row-gap: 32px;
+
+      .btn {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__icon-holder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @media (min-width: $pc) {
+      width: 48px;
+      height: 48px;
+    }
+  }
+
+  &__text-box {
+    display: flex;
+    flex-direction: column;
+    row-gap: 38px;
+
+    @media (min-width: $pc) {
+      row-gap: 64px;
+    }
+  }
+
+  &__text-holder {
+    color: var(--NY-Black-source);
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -1px;
+    overflow-wrap: anywhere;
+
+    span {
+      color: var(--NY-Terra-400);
+    }
+
+    @media (min-width: $pc) {
+      font-size: 64px;
+      line-height: 1;
+      letter-spacing: -4px;
+    }
+  }
+}

@@ -1,0 +1,77 @@
+@use "./layout/variables" as *;
+@use "./layout/colors" as *;
+
+.info-box {
+  padding: 16px 0 12px;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @media (min-width: $pc) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__left-col {
+    @media (min-width: $pc) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__text-holder {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    color: var(--NY-Blue-source);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+
+    span {
+      &::before {
+        font-size: 24px;
+      }
+
+      @media (min-width: $pc) {
+        &::before {
+          font-size: 32px;
+        }
+      }
+    }
+
+    @media (min-width: $pc) {
+      align-items: center;
+      flex-direction: row;
+      gap: 12px;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 1;
+    }
+
+    img {
+      width: 57px;
+      height: 20px;
+
+      @media (min-width: $pc) {
+        width: 76px;
+        height: 29px;
+      }
+    }
+  }
+
+  &__right-col {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+
+    @media (min-width: $pc) {
+      gap: 12px;
+    }
+  }
+}
